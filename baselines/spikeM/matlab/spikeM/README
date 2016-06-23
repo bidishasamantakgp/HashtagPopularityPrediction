@@ -1,0 +1,41 @@
+Version: June 3, 2014 
+Author: Yasuko Matsubara (yasuko@cs.kumamoto-u.ac.jp)
+
+
+1. Introduction
+
+	This is a python/matlab code of SpikeM. 
+
+
+2. Quick demo (python)
+
+	(a) Interactive demo
+        	$ make demo
+	(b) Fitting data
+        	$ make data
+        
+3. Model fitting (matlab - python code will be coming soon..!)
+
+		$ make fit
+
+	
+
+
+References
+-----------
+
+See 
+"Yasuko Matsubara, Yasushi Sakurai, B. Aditya Prakash, Lei Li, Christos Faloutsos, 
+Rise and Fall Patterns of Information Diffusion: Model and Implications, 
+ACM SIGKDD, Beijing, China, August 2012"
+
+
+Updates
+------------
+Version: June 3, 2014, 
+    - add log-fitting etc., (default: linear fitting)
+Version: February 26, 2014,
+    - add try/catch (LMfit)
+    - add interactive GUI plots
+Version: July 18, 2012,
+    - released
