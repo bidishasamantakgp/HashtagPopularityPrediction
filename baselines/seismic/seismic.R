@@ -1,0 +1,33 @@
+
+library(seismic)
+
+
+myArgs <- commandArgs(trailingOnly = TRUE)
+mydata = read.table(myArgs[2],sep=",")
+
+#len = length(mydata)
+#myArgs <- commandArgs(trailingOnly = TRUE)
+#myArgs[1]
+end <- as.integer(myArgs[1])
+pred.time <- seq(0, end, by = 600)
+#pred.time <- seq(0, end, by = as.integer(end/100))
+infectiousness <- get.infectiousness(mydata[, 1], mydata[, 2], pred.time)
+#png('plot.png')
+#plot(pred.time, infectiousness$infectiousness)
+#cat(infectiousness$infectiousness)
+#testData = read.table("/home/bidisha/twitterTimeStamp/seismic_test.csv",sep=",")
+#pred.time_new <- seq(0, 204691, by = 100)
+pred <- pred.cascade(pred.time, infectiousness$infectiousness, mydata[, 1], mydata[, 2], n.star = 100)
+cat(pred.time)
+cat("\t")
+cat(pred[,1])
+#print(pred.time)
+#plot(pred.time, pred)
+#data(tweet)
+#print(tweet[,1])
+#print(tweet[,2])
+#pred.time <- seq(0, 6 * 60 * 60, by = 60)
+#infectiousness <- get.infectiousness(tweet[, 1], tweet[, 2], pred.time)
+#pred <- pred.cascade(pred.time, infectiousness$infectiousness, tweet[, 1], tweet[, 2], n.star = 100)
+#plot(pred.time, tweet[, 1])
+#plot(pred.time, pred)
